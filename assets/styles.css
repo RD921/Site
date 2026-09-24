@@ -73,8 +73,50 @@ button{font:inherit;cursor:pointer;background:none;border:none;padding:0;margin:
 .project-card{background:#0D1420;border:1px solid rgba(244,246,249,0.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;}
 .project-thumb{width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#101C2C,#0A1119);display:flex;align-items:center;justify-content:center;color:#3A4356;border-bottom:1px solid rgba(244,246,249,0.07);}
 
+/* RESPONSIVE LAYOUT UTILITIES */
+.section{width:100%;max-width:1280px;margin:0 auto;padding-left:32px;padding-right:32px;box-sizing:border-box;}
+.hero-pad{padding-top:96px;padding-bottom:72px;}
+.content-pad{padding-top:64px;padding-bottom:96px;}
+.cta-pad{padding-top:0;padding-bottom:96px;}
+.cta-pad-top{padding-top:96px;padding-bottom:96px;}
+
+.cols-2{grid-template-columns:repeat(2,1fr);}
+.cols-3{grid-template-columns:repeat(3,1fr);}
+.cols-2a{grid-template-columns:1.05fr 1fr;}
+.cols-2b{grid-template-columns:0.95fr 1.3fr;}
+
+.cta-box{padding:52px 48px;}
+
+.hero-h1-lg{font-size:52px;line-height:1.08;font-weight:700;margin:0 0 22px;letter-spacing:-0.01em;}
+.hero-h1{font-size:40px;font-weight:700;line-height:1.15;margin:0 0 16px;letter-spacing:-0.01em;}
+.cta-h2{font-size:28px;font-weight:700;line-height:1.25;margin:0;}
+
 @media (max-width: 860px){
   .nav-links{display:none;}
   .nav-right .btn-primary{display:none;}
   .mobile-menu-btn{display:flex;}
+
+  .section{padding-left:20px;padding-right:20px;}
+  .hero-pad{padding-top:52px;padding-bottom:38px;}
+  .content-pad{padding-top:40px;padding-bottom:56px;}
+  .cta-pad{padding-bottom:56px;}
+  .cta-pad-top{padding-top:48px;padding-bottom:56px;}
+  .cols-2,.cols-3,.cols-2a,.cols-2b{grid-template-columns:1fr;}
+  .cta-box{padding:32px 24px;}
+
+  .hero-h1-lg{font-size:32px;margin:0 0 16px;}
+  .hero-h1{font-size:27px;margin:0 0 14px;}
+  .cta-h2{font-size:21px;}
+
+  .brand img{width:104px;}
+}
+
+@media (max-width: 560px){
+  .hero-visual{display:none;}
+  .brand-tag{display:none;}
+  .nav-inner{padding:14px 16px;}
+  .footer-inner{flex-direction:column;text-align:center;justify-content:center;gap:14px;}
+  .footer-social{justify-content:center;}
+  .contact-card{padding:16px 18px;}
+  .cta-box .btn-primary{width:100%;justify-content:center;}
 }

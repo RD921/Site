@@ -95,6 +95,8 @@ button{font:inherit;cursor:pointer;background:none;border:none;padding:0;margin:
   .nav-links{display:none;}
   .nav-right .btn-primary{display:none;}
   .mobile-menu-btn{display:flex;}
+  .nav-inner{display:flex;justify-content:space-between;align-items:center;}
+  .nav-right{width:auto;}
 
   .section{padding-left:20px;padding-right:20px;}
   .hero-pad{padding-top:52px;padding-bottom:38px;}
@@ -114,9 +116,14 @@ button{font:inherit;cursor:pointer;background:none;border:none;padding:0;margin:
 @media (max-width: 560px){
   .hero-visual{display:none;}
   .brand-tag{display:none;}
-  .nav-inner{padding:14px 16px;}
-  .footer-inner{flex-direction:column;text-align:center;justify-content:center;gap:14px;}
-  .footer-social{justify-content:center;}
+  .nav-inner{padding:18px 20px;}
+  .brand{gap:12px;}
+
+  .footer-inner{flex-direction:column;text-align:center;justify-content:center;align-items:center;gap:24px;padding:40px 24px;}
+  .footer-brand{flex-direction:column;gap:14px;}
+  .footer-social{justify-content:center;gap:22px;flex-wrap:wrap;row-gap:16px;}
+  .footer-social span{display:block;width:100%;margin:14px 0 0;padding-top:16px;border-top:1px solid rgba(244,246,249,0.08);}
+
   .contact-card{padding:16px 18px;}
   .cta-box .btn-primary{width:100%;justify-content:center;}
 }

@@ -128,3 +128,21 @@ button{font:inherit;cursor:pointer;background:none;border:none;padding:0;margin:
   .contact-card{padding:16px 18px;}
   .cta-box .btn-primary{width:100%;justify-content:center;}
 }
+/* MODAL DE PROJETO */
+.project-card[data-project]{cursor:pointer;}
+.project-card[data-project]:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+.project-modal{position:fixed;inset:0;z-index:120;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(4,8,14,0.72);backdrop-filter:blur(6px);}
+.project-modal.open{display:flex;}
+.project-modal-box{position:relative;width:100%;max-width:620px;max-height:calc(100vh - 40px);overflow-y:auto;background:#0D1420;border:1px solid rgba(244,246,249,0.12);border-radius:18px;padding:32px;box-shadow:0 30px 70px -20px rgba(0,0,0,0.7);}
+.project-modal-box h2{padding-right:44px;}
+.project-modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border:1px solid rgba(244,246,249,0.18);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#F4F6F9;}
+.project-modal-close:hover{border-color:rgba(244,246,249,0.4);}
+.project-modal-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:0 0 26px;padding:0;list-style:none;}
+.project-modal-list li{background:#101825;border:1px solid rgba(244,246,249,0.07);border-radius:10px;padding:12px 14px;font-size:13px;color:#9AA3B2;line-height:1.45;}
+.project-modal-list strong{display:block;color:#F4F6F9;font-size:13.5px;margin-bottom:3px;}
+body.modal-open{overflow:hidden;}
+@media (max-width: 560px){
+  .project-modal-box{padding:26px 20px;}
+  .project-modal-list{grid-template-columns:1fr;}
+  .project-modal .btn-primary{width:100%;justify-content:center;}
+}

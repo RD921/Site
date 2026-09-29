@@ -59,3 +59,40 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+// MODAL DE PROJETO: clicar no card abre os detalhes; "Ver projeto" continua abrindo o link
+document.addEventListener('DOMContentLoaded', function () {
+  var aberto = null, origem = null;
+  function abrir(id, card) {
+    var modal = document.querySelector('[data-project-modal="' + id + '"]');
+    if (!modal) return;
+    modal.classList.add('open');
+    document.body.classList.add('modal-open');
+    aberto = modal; origem = card;
+    var btn = modal.querySelector('[data-project-close]');
+    if (btn) btn.focus();
+  }
+  function fechar() {
+    if (!aberto) return;
+    aberto.classList.remove('open');
+    document.body.classList.remove('modal-open');
+    aberto = null;
+    if (origem) origem.focus();
+  }
+  document.querySelectorAll('[data-project]').forEach(function (card) {
+    card.setAttribute('tabindex', '0');
+    card.addEventListener('click', function (e) {
+      if (e.target.closest('a')) return;
+      abrir(card.getAttribute('data-project'), card);
+    });
+    card.addEventListener('keydown', function (e) {
+      if (e.target !== card) return;
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrir(card.getAttribute('data-project'), card); }
+    });
+  });
+  document.querySelectorAll('[data-project-modal]').forEach(function (modal) {
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal || e.target.closest('[data-project-close]')) fechar();
+    });
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fechar(); });
+});

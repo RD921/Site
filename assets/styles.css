@@ -393,3 +393,8 @@ body.no-scroll{overflow:hidden;}
   .about-art .ui-chip,.about-art .code-chip.c2{display:none;}
 }
 .footer{padding:40px 0;}
+
+/* Cursos (Sobre) */
+.courses{grid-template-columns:repeat(3,1fr);}
+@media (max-width: 1199px){ .courses{grid-template-columns:repeat(2,1fr);} }
+@media (max-width: 767px){ .courses{grid-template-columns:1fr;} }

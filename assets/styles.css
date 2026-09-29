@@ -392,3 +392,4 @@ body.no-scroll{overflow:hidden;}
 @media (max-width: 767px){
   .about-art .ui-chip,.about-art .code-chip.c2{display:none;}
 }
+.footer{padding:40px 0;}

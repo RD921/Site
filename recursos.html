@@ -81,7 +81,7 @@
   <div class="section content-pad">
     <div class="cols-3" style="display:grid;gap:18px;">
 
-      <div class="project-card card-hover">
+      <div class="project-card card-hover" data-project="woah">
         <div class="project-thumb">
           <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
         </div>
@@ -111,7 +111,7 @@
         </div>
       </div>
 
-      <div class="project-card card-hover">
+      <div class="project-card card-hover" data-project="projeto3">
         <div class="project-thumb">
           <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
         </div>
@@ -178,6 +178,51 @@
   </div>
 
 </div>
+  <!-- MODAL PROJETO WOAH COLLECTION -->
+  <div class="project-modal" data-project-modal="woah" role="dialog" aria-modal="true" aria-labelledby="woah-modal-title">
+    <div class="project-modal-box">
+      <button type="button" class="project-modal-close" aria-label="Fechar" data-project-close>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.14em;color:var(--accent);margin-bottom:10px;">PROJETO</div>
+      <h2 id="woah-modal-title" class="font-display" style="font-size:26px;font-weight:700;line-height:1.2;margin:0 0 12px;">Woah Collection</h2>
+      <p style="font-size:14.5px;line-height:1.6;color:#AEB7C6;margin:0 0 22px;">Loja online de beats exclusivos para artistas que querem gravar com qualidade de estúdio. O cliente escuta, escolhe e compra o beat direto pelo site, e recebe o arquivo na hora.</p>
+      <ul class="project-modal-list">
+        <li><div><strong>Catálogo de beats</strong>Trap, Drill, Boom Bap e R&amp;B em um só lugar.</div></li>
+        <li><div><strong>Prévia em áudio</strong>Dá para ouvir cada beat antes de comprar.</div></li>
+        <li><div><strong>Beat em destaque</strong>Vitrine para os lançamentos principais.</div></li>
+        <li><div><strong>Compra segura</strong>Pagamento direto pela loja.</div></li>
+        <li><div><strong>Entrega imediata</strong>O arquivo chega logo após a compra.</div></li>
+        <li><div><strong>100% original</strong>Beats exclusivos, feitos do zero.</div></li>
+      </ul>
+      <a href="https://www.woahcolletion.com/woah-collection/index.html" target="_blank" rel="noopener" class="btn-primary">
+        Acessar a loja
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- MODAL PROJETO 3 (preencha quando tiver o projeto) -->
+  <div class="project-modal" data-project-modal="projeto3" role="dialog" aria-modal="true" aria-labelledby="projeto3-modal-title">
+    <div class="project-modal-box">
+      <button type="button" class="project-modal-close" aria-label="Fechar" data-project-close>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.14em;color:var(--accent);margin-bottom:10px;">PROJETO</div>
+      <h2 id="projeto3-modal-title" class="font-display" style="font-size:26px;font-weight:700;line-height:1.2;margin:0 0 12px;">[Nome do Projeto 3]</h2>
+      <p style="font-size:14.5px;line-height:1.6;color:#AEB7C6;margin:0 0 22px;">[Explique o projeto: o que ele resolve, pra quem é e o que tem de diferente.]</p>
+      <ul class="project-modal-list">
+        <li><div><strong>[Recurso 1]</strong>[Descrição curta]</div></li>
+        <li><div><strong>[Recurso 2]</strong>[Descrição curta]</div></li>
+        <li><div><strong>[Recurso 3]</strong>[Descrição curta]</div></li>
+        <li><div><strong>[Recurso 4]</strong>[Descrição curta]</div></li>
+      </ul>
+      <a href="#" target="_blank" rel="noopener" class="btn-primary">
+        Acessar o projeto
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
   <!-- MODAL PROJETO ERP -->
   <div class="project-modal" data-project-modal="erp" role="dialog" aria-modal="true" aria-labelledby="erp-modal-title">
     <div class="project-modal-box">

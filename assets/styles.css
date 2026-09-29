@@ -398,3 +398,5 @@ body.no-scroll{overflow:hidden;}
 .courses{grid-template-columns:repeat(3,1fr);}
 @media (max-width: 1199px){ .courses{grid-template-columns:repeat(2,1fr);} }
 @media (max-width: 767px){ .courses{grid-template-columns:1fr;} }
+.course-when{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:4px;}
+.tl-dot{font-size:12px;text-align:center;line-height:1.15;padding:0 4px;}

@@ -3,151 +3,184 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rodrigo Arrezzi — Soluções</title>
-<meta name="description" content="Conheça os módulos da plataforma Rodrigo Arrezzi.">
+<title>Soluções — Rodrigo Arrezzi</title>
+<meta name="description" content="Desenvolvimento de sistemas, automação, IA, integrações, e-commerce e plataformas personalizadas para empresas.">
+<meta name="theme-color" content="#050A12">
+<meta property="og:title" content="Soluções — Rodrigo Arrezzi">
+<meta property="og:description" content="Desenvolvimento de sistemas, automação, IA, integrações, e-commerce e plataformas personalizadas para empresas.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://rodrigoarrezzi.com/assets/foguete.jpg">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-<div class="page">
-  <!-- NAV -->
-  <div class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="brand">
-        <img src="assets/rd-logo.png" alt="Rodrigo Arrezzi">
-        <div class="brand-text">
-          <div class="font-display brand-name">Rodrigo Arrezzi</div>
-          <div class="brand-tag">Tecnologia que impulsiona o seu negócio</div>
-        </div>
-      </a>
-      <div class="nav-links">
-        <a href="index.html" class="nav-link">Início</a>
-        <a href="recursos.html" class="nav-link">Projetos</a>
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand" aria-label="Rodrigo Arrezzi, página inicial">
+      <img src="assets/rd-logo.png" alt="" width="76" height="30">
+      <div>
+        <div class="brand-name">Rodrigo Arrezzi</div>
+        <div class="brand-tag">Desenvolvimento • Automação • IA • Soluções Digitais</div>
       </div>
-      <div class="nav-right">
-        <a href="contato.html" class="btn-primary btn-sm">
-          Fale Conosco
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <button type="button" aria-label="Abrir menu" class="mobile-menu-btn" data-menu-open>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        </button>
-      </div>
+    </a>
+    <nav class="nav" aria-label="Principal"><a href="index.html">Início</a><a href="solucoes.html" class="active" aria-current="page">Soluções</a><a href="recursos.html">Projetos</a><a href="sobre.html">Sobre</a></nav>
+    <div class="header-cta">
+      <a href="contato.html" class="btn btn-primary btn-sm">Fale comigo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <button type="button" class="menu-btn" aria-label="Abrir menu" data-menu-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
+</header>
 
-  <!-- MOBILE MENU OVERLAY -->
-  <div class="mobile-overlay" data-menu-overlay>
-    <div class="mobile-overlay-head">
-      <div style="display:flex;align-items:center;gap:10px;">
-        <img src="assets/rd-logo.png" alt="Rodrigo Arrezzi">
-        <div class="font-display" style="font-size:14px;font-weight:700;">Rodrigo Arrezzi</div>
-      </div>
-      <button type="button" aria-label="Fechar menu" data-menu-close style="background:transparent;border:1px solid rgba(244,246,249,0.22);border-radius:10px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;color:#F4F6F9;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
-      </button>
-    </div>
-    <div class="mobile-links">
-        <a href="index.html" class="mobile-link font-display">Início</a>
-        <a href="solucoes.html" class="mobile-link font-display active">Soluções</a>
-        <a href="recursos.html" class="mobile-link font-display">Projetos</a>
-    </div>
-    <div class="mobile-overlay-foot">
-      <a href="contato.html" class="btn-primary">
-        Fale Conosco
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-    </div>
+<div class="mobile-menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="mobile-menu-head">
+    <a href="index.html" class="brand"><img src="assets/rd-logo.png" alt="" width="76" height="30"><div class="brand-name">Rodrigo Arrezzi</div></a>
+    <button type="button" class="menu-btn" style="display:flex" aria-label="Fechar menu" data-menu-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
   </div>
-
-  <div class="page-main">
-  <!-- HERO -->
-  <div style="width:100%;position:relative;overflow:hidden;background:radial-gradient(1100px 520px at 18% -10%, rgba(45,212,191,0.16), transparent 60%), radial-gradient(900px 460px at 100% 10%, rgba(96,165,250,0.10), transparent 55%), #080D16;">
-    <div class="section hero-pad">
-      <div class="cols-2b" style="display:grid;gap:56px;align-items:start;">
-        <div>
-          <div style="font-size:12px;font-weight:600;letter-spacing:0.14em;color:var(--accent);margin-bottom:14px;">NOSSAS SOLUÇÕES</div>
-          <h1 class="font-display hero-h1" style="margin:0;">
-            Tudo para sua empresa <span style="color:var(--accent);">e muito além.</span>
-          </h1>
-        </div>
-        <div style="display:flex;flex-direction:column;justify-content:center;gap:20px;">
-          <p style="font-size:16px;line-height:1.65;color:#AEB7C6;margin:0;max-width:460px;">
-            Do pedido à entrega, da gestão ao marketing. A Rodrigo Arrezzi conecta suas ferramentas, automatiza tarefas e te dá o controle total do seu negócio.
-          </p>
-          <a href="contato.html" class="btn-outline" style="width:fit-content;">
-            Fale com um especialista
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MODULES -->
-  <div class="section content-pad">
-    <div class="cols-2" style="display:grid;gap:14px;">
-      <div class="card-hover" style="background:#0D1420;border:1px solid rgba(244,246,249,0.08);border-radius:14px;padding:22px;">
-        <div style="width:38px;height:38px;border-radius:10px;background:rgba(45,212,191,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4zM3 7v10l9 4 9-4V7"/></svg>
-        </div>
-        <div style="font-size:15px;font-weight:600;margin-bottom:6px;">Pedidos</div>
-        <div style="font-size:13px;color:#9AA3B2;line-height:1.5;">Gestão completa de pedidos e envios, do recebimento à entrega.</div>
-      </div>
-      <div class="card-hover" style="background:#0D1420;border:1px solid rgba(244,246,249,0.08);border-radius:14px;padding:22px;">
-        <div style="width:38px;height:38px;border-radius:10px;background:rgba(45,212,191,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a1 1 0 00-1 1v11a1 1 0 001 1h16a1 1 0 001-1V8a1 1 0 00-1-1zM16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
-        </div>
-        <div style="font-size:15px;font-weight:600;margin-bottom:6px;">Produtos</div>
-        <div style="font-size:13px;color:#9AA3B2;line-height:1.5;">Cadastros, estoque e sincronização automática entre canais.</div>
-      </div>
-      <div class="card-hover" style="background:#0D1420;border:1px solid rgba(244,246,249,0.08);border-radius:14px;padding:22px;">
-        <div style="width:38px;height:38px;border-radius:10px;background:rgba(45,212,191,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/></svg>
-        </div>
-        <div style="font-size:15px;font-weight:600;margin-bottom:6px;">Integrações</div>
-        <div style="font-size:13px;color:#9AA3B2;line-height:1.5;">Bling, Mercado Livre, Amazon, Shopee e muito mais.</div>
-      </div>
-      <div class="card-hover" style="background:#0D1420;border:1px solid rgba(244,246,249,0.08);border-radius:14px;padding:22px;">
-        <div style="width:38px;height:38px;border-radius:10px;background:rgba(45,212,191,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
-        </div>
-        <div style="font-size:15px;font-weight:600;margin-bottom:6px;">Automação</div>
-        <div style="font-size:13px;color:#9AA3B2;line-height:1.5;">Crie fluxos e dispare ações automáticas, sem depender de planilha.</div>
-      </div>
-    </div>
-  </div>
-
-  </div>
-
-  <!-- FOOTER -->
-  <div class="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="assets/rd-logo.png" alt="Rodrigo Arrezzi">
-        <div>
-          <div class="font-display" style="font-size:13.5px;font-weight:700;line-height:1.1;">Rodrigo Arrezzi</div>
-          <div style="font-size:10px;color:#7C8698;line-height:1.1;margin-top:2px;">Tecnologia que impulsiona o seu negócio</div>
-        </div>
-      </div>
-      <div class="footer-social">
-        <a href="https://www.instagram.com/rodrigoarrezzidev/" target="_blank" rel="noopener" aria-label="Instagram" style="color:#8A93A3;">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg>
-        </a>
-        <a href="https://wa.me/5527996386305" target="_blank" rel="noopener" aria-label="WhatsApp" style="color:#8A93A3;">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.85.5 3.58 1.4 5.16L2 22l5.09-1.5a9.9 9.9 0 004.95 1.32h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.63 14.18c-.24.68-1.41 1.31-1.94 1.38-.5.07-1.11.1-1.79-.11-.41-.13-.94-.3-1.62-.6-2.86-1.24-4.72-4.13-4.86-4.32-.14-.19-1.16-1.55-1.16-2.96 0-1.4.73-2.09 1-2.38.26-.28.57-.35.76-.35h.55c.18 0 .42-.03.65.5.24.56.8 1.94.87 2.08.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.71 1.18 1.53 1.91 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.19-.28.37-.23.62-.14.26.09 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.35z"/></svg>
-        </a>
-        <a href="https://github.com/RD921?tab=repositories" target="_blank" rel="noopener" aria-label="GitHub" style="color:#8A93A3;">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 015 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.95.68 1.92 0 1.39-.01 2.5-.01 2.84 0 .28.18.61.69.5A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-
+  <nav class="mobile-links"><a href="index.html">Início</a><a href="solucoes.html" class="active">Soluções</a><a href="recursos.html">Projetos</a><a href="sobre.html">Sobre</a><a href="contato.html">Fale comigo</a></nav>
+  <div class="mobile-menu-foot"><a href="contato.html" class="btn btn-primary">Fale comigo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
 </div>
+
+<main>
+<section class="page-hero">
+  <svg class="deco" viewBox="0 0 520 520" aria-hidden="true"><g fill="none" stroke="#16D6C5">
+      <circle cx="260" cy="260" r="250" stroke-opacity=".08"/><circle cx="260" cy="260" r="200" stroke-opacity=".12"/>
+      <circle cx="260" cy="260" r="150" stroke-opacity=".16"/><circle cx="260" cy="260" r="100" stroke-opacity=".2"/></g></svg>
+  <div class="container">
+    <span class="eyebrow reveal">Soluções</span>
+    <h1 class="h1 reveal d1">Soluções para o <span class="accent">seu negócio</span></h1>
+    <p class="lead reveal d2">Desenvolvimento, automação e inteligência para transformar processos e criar novas possibilidades.</p>
+    <div class="filters reveal d3" style="margin-top:32px;margin-bottom:0"><a href="#sistemas" class="filter" style="display:inline-flex;align-items:center">Desenvolvimento de sistemas</a><a href="#automacao" class="filter" style="display:inline-flex;align-items:center">Automação</a><a href="#ia" class="filter" style="display:inline-flex;align-items:center">Inteligência Artificial</a><a href="#integracoes" class="filter" style="display:inline-flex;align-items:center">Integrações</a><a href="#ecommerce" class="filter" style="display:inline-flex;align-items:center">E-commerce</a><a href="#plataformas" class="filter" style="display:inline-flex;align-items:center">Plataformas personalizadas</a></div>
+  </div>
+</section>
+<section class="section" style="padding-top:40px">
+  <div class="container">
+    <article class="card solution-block reveal" id="sistemas">
+      <div>
+        <div class="icon-box lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></div>
+        <h2 class="h2">Desenvolvimento de sistemas</h2>
+        <p class="lead">Sistemas e plataformas personalizados para processos específicos.</p>
+        <a href="contato.html" class="btn btn-primary">Quero essa solução <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div>
+        <p class="block-label">Benefícios</p>
+        <ul class="benefits"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Sistema feito em cima do jeito que sua empresa já trabalha</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Painéis, cadastros e relatórios em um só lugar</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Acesso pelo navegador, no computador ou no celular</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Base pronta para crescer junto com a operação</span></li></ul>
+        <p class="block-label mt">Tecnologias e integrações</p>
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag">Node.js</span><span class="tag">React</span><span class="tag">Python</span><span class="tag">Java</span><span class="tag">SQL / MySQL</span></div>
+      </div>
+    </article>
+    <article class="card solution-block reveal" id="automacao">
+      <div>
+        <div class="icon-box lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+        <h2 class="h2">Automação</h2>
+        <p class="lead">Automatize tarefas, fluxos e operações repetitivas.</p>
+        <a href="contato.html" class="btn btn-primary">Quero essa solução <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div>
+        <p class="block-label">Benefícios</p>
+        <ul class="benefits"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Menos trabalho manual e menos erros de digitação</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Fluxos que disparam sozinhos a partir de eventos</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Relatórios e avisos gerados automaticamente</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Equipe livre para o que realmente importa</span></li></ul>
+        <p class="block-label mt">Tecnologias e integrações</p>
+        <div class="tags"><span class="tag">Fluxos automáticos</span><span class="tag">Webhooks</span><span class="tag">Agendamentos</span><span class="tag">Planilhas</span><span class="tag">Notificações</span></div>
+      </div>
+    </article>
+    <article class="card solution-block reveal" id="ia">
+      <div>
+        <div class="icon-box lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.9L19 9.7l-5.2 1.8L12 16.5l-1.8-5L5 9.7l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div>
+        <h2 class="h2">Inteligência Artificial</h2>
+        <p class="lead">IA aplicada ao atendimento, análise, operação e tomada de decisão.</p>
+        <a href="contato.html" class="btn btn-primary">Quero essa solução <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div>
+        <p class="block-label">Benefícios</p>
+        <ul class="benefits"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Assistentes que respondem com base nos dados da empresa</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Resumos e análises da operação em linguagem simples</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Apoio à tomada de decisão no dia a dia</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>IA integrada aos sistemas que você já usa</span></li></ul>
+        <p class="block-label mt">Tecnologias e integrações</p>
+        <div class="tags"><span class="tag">Modelos de linguagem</span><span class="tag">Assistentes virtuais</span><span class="tag">Análise de dados</span><span class="tag">Gerente AI</span></div>
+      </div>
+    </article>
+    <article class="card solution-block reveal" id="integracoes">
+      <div>
+        <div class="icon-box lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/></svg></div>
+        <h2 class="h2">Integrações</h2>
+        <p class="lead">Conecte APIs, ERPs, marketplaces, pagamentos e outras ferramentas.</p>
+        <a href="contato.html" class="btn btn-primary">Quero essa solução <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div>
+        <p class="block-label">Benefícios</p>
+        <ul class="benefits"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Pedidos, estoque e clientes sincronizados entre canais</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Fim do retrabalho de copiar dados de um sistema para outro</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Informação atualizada em tempo real</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Integração com o que já funciona na empresa</span></li></ul>
+        <p class="block-label mt">Tecnologias e integrações</p>
+        <div class="tags"><span class="tag">APIs REST</span><span class="tag">Mercado Livre</span><span class="tag">Amazon</span><span class="tag">Shopee</span><span class="tag">Bling</span><span class="tag">Pagamentos</span></div>
+      </div>
+    </article>
+    <article class="card solution-block reveal" id="ecommerce">
+      <div>
+        <div class="icon-box lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.7 12.4a2 2 0 002 1.6h7.6a2 2 0 002-1.6L21 7H6"/></svg></div>
+        <h2 class="h2">E-commerce</h2>
+        <p class="lead">Lojas virtuais e operações digitais preparadas para crescer.</p>
+        <a href="contato.html" class="btn btn-primary">Quero essa solução <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div>
+        <p class="block-label">Benefícios</p>
+        <ul class="benefits"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Loja rápida, bonita e pensada para vender</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Compra segura e entrega de produtos físicos ou digitais</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Catálogo, vitrine e busca organizados</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Operação integrada ao estoque e ao financeiro</span></li></ul>
+        <p class="block-label mt">Tecnologias e integrações</p>
+        <div class="tags"><span class="tag">Loja virtual</span><span class="tag">Checkout</span><span class="tag">Catálogo</span><span class="tag">Integração com marketplaces</span></div>
+      </div>
+    </article>
+    <article class="card solution-block reveal" id="plataformas">
+      <div>
+        <div class="icon-box lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l10 5-10 5L2 7l10-5z"/><path d="M2 12l10 5 10-5M2 17l10 5 10-5"/></svg></div>
+        <h2 class="h2">Plataformas personalizadas</h2>
+        <p class="lead">Produtos digitais, sistemas SaaS e plataformas sob medida.</p>
+        <a href="contato.html" class="btn btn-primary">Quero essa solução <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div>
+        <p class="block-label">Benefícios</p>
+        <ul class="benefits"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Da ideia ao produto digital no ar</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Área do cliente, planos e acessos</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Arquitetura pensada para muitos usuários</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Evolução contínua depois do lançamento</span></li></ul>
+        <p class="block-label mt">Tecnologias e integrações</p>
+        <div class="tags"><span class="tag">SaaS</span><span class="tag">Área do cliente</span><span class="tag">Painel administrativo</span><span class="tag">Banco de dados</span></div>
+      </div>
+    </article>
+    
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="cta reveal">
+      <svg class="circles" viewBox="0 0 520 520" aria-hidden="true"><g fill="none" stroke="#16D6C5">
+      <circle cx="260" cy="260" r="250" stroke-opacity=".08"/><circle cx="260" cy="260" r="200" stroke-opacity=".12"/>
+      <circle cx="260" cy="260" r="150" stroke-opacity=".16"/><circle cx="260" cy="260" r="100" stroke-opacity=".2"/></g></svg>
+      <svg class="circles left" viewBox="0 0 520 520" aria-hidden="true"><g fill="none" stroke="#16D6C5">
+      <circle cx="260" cy="260" r="250" stroke-opacity=".08"/><circle cx="260" cy="260" r="200" stroke-opacity=".12"/>
+      <circle cx="260" cy="260" r="150" stroke-opacity=".16"/><circle cx="260" cy="260" r="100" stroke-opacity=".2"/></g></svg>
+      <span class="eyebrow">Próximo passo</span>
+      <h2 class="h2">Qual dessas soluções faz sentido para você?</h2>
+      <p class="lead">Me conte como sua empresa funciona hoje. Eu te ajudo a entender o que automatizar, integrar ou construir primeiro.</p>
+      <a href="contato.html" class="btn btn-primary">Vamos conversar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/rd-logo.png" alt="Logo RD" width="84" height="33">
+        <div><div class="t1">Rodrigo Arrezzi</div><div class="t2">Tecnologia que impulsiona o seu negócio.</div></div>
+      </div>
+      <nav class="footer-nav" aria-label="Rodapé"><a href="index.html">Início</a><a href="solucoes.html">Soluções</a><a href="recursos.html">Projetos</a><a href="sobre.html">Sobre</a><a href="contato.html">Fale comigo</a></nav>
+      <div class="socials">
+        <a href="https://www.instagram.com/rodrigoarrezzidev/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg></a>
+        <a href="https://wa.me/5527996386305" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.85.5 3.58 1.4 5.16L2 22l5.09-1.5a9.9 9.9 0 004.95 1.32h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.63 14.18c-.24.68-1.41 1.31-1.94 1.38-.5.07-1.11.1-1.79-.11-.41-.13-.94-.3-1.62-.6-2.86-1.24-4.72-4.13-4.86-4.32-.14-.19-1.16-1.55-1.16-2.96 0-1.4.73-2.09 1-2.38.26-.28.57-.35.76-.35h.55c.18 0 .42-.03.65.5.24.56.8 1.94.87 2.08.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.71 1.18 1.53 1.91 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.19-.28.37-.23.62-.14.26.09 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.35z"/></svg></a>
+        <a href="https://github.com/RD921?tab=repositories" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 015 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.95.68 1.92 0 1.39-.01 2.5-.01 2.84 0 .28.18.61.69.5A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span data-year>2026</span> Rodrigo Arrezzi. Todos os direitos reservados.</div>
+  </div>
+</footer>
 <script src="assets/script.js"></script>
 </body>
 </html>

@@ -1,98 +1,96 @@
 document.addEventListener('DOMContentLoaded', function () {
+  var body = document.body;
+
+  // Header: fica mais sólido ao rolar
+  var header = document.querySelector('.header');
+  function onScroll() { if (header) header.classList.toggle('scrolled', window.scrollY > 8); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Menu mobile
+  var menu = document.querySelector('[data-menu]');
   var openBtn = document.querySelector('[data-menu-open]');
-  var closeBtn = document.querySelector('[data-menu-close]');
-  var overlay = document.querySelector('[data-menu-overlay]');
-  if (openBtn && overlay) {
-    openBtn.addEventListener('click', function () { overlay.classList.add('open'); });
-  }
-  if (closeBtn && overlay) {
-    closeBtn.addEventListener('click', function () { overlay.classList.remove('open'); });
-  }
-  if (overlay) {
-    overlay.querySelectorAll('a, button').forEach(function (el) {
-      el.addEventListener('click', function () { overlay.classList.remove('open'); });
-    });
+  function closeMenu() { if (!menu) return; menu.classList.remove('open'); body.classList.remove('no-scroll'); }
+  if (menu && openBtn) {
+    openBtn.addEventListener('click', function () { menu.classList.add('open'); body.classList.add('no-scroll'); });
+    menu.querySelectorAll('[data-menu-close], a').forEach(function (el) { el.addEventListener('click', closeMenu); });
   }
 
-  // ERP PREVIEW TABS
-  var erpTabs = document.querySelectorAll('[data-erp-tab]');
-  if (erpTabs.length) {
-    erpTabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        erpTabs.forEach(function (t) { t.classList.remove('active'); });
-        tab.classList.add('active');
-        var target = tab.getAttribute('data-erp-tab');
-        document.querySelectorAll('[data-erp-panel]').forEach(function (panel) {
-          panel.hidden = panel.getAttribute('data-erp-panel') !== target;
-        });
+  // Animações ao aparecer na tela
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  // Filtros de projetos
+  var filters = document.querySelectorAll('[data-filter]');
+  var empty = document.querySelector('[data-empty]');
+  filters.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filters.forEach(function (b) { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
+      btn.classList.add('active'); btn.setAttribute('aria-pressed', 'true');
+      var f = btn.getAttribute('data-filter'), shown = 0;
+      document.querySelectorAll('[data-categories]').forEach(function (card) {
+        var ok = f === 'todos' || card.getAttribute('data-categories').split(' ').indexOf(f) > -1;
+        card.classList.toggle('project-hidden', !ok);
+        if (ok) shown++;
       });
+      if (empty) empty.classList.toggle('show', shown === 0);
     });
-  }
+  });
 
-  // ERP PREVIEW — ASSISTENTE VIRTUAL (demo, respostas fixas)
-  var chatForm = document.querySelector('[data-chat-form]');
-  var chatInput = document.querySelector('[data-chat-input]');
-  var chatLog = document.querySelector('[data-chat-log]');
-  var chatReplies = [
-    'Consegui localizar isso pra você — no ERP completo essa resposta viria com base nos seus dados reais.',
-    'Boa pergunta! No sistema completo eu já teria essa informação puxada automaticamente do seu painel.',
-    'Essa é uma prévia do assistente. Na versão real eu acesso pedidos, estoque e financeiro em tempo real pra te responder.'
-  ];
-  if (chatForm && chatInput && chatLog) {
-    chatForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var text = chatInput.value.trim();
-      if (!text) return;
-      var userBubble = document.createElement('div');
-      userBubble.className = 'chat-bubble user';
-      userBubble.textContent = text;
-      chatLog.appendChild(userBubble);
-      chatInput.value = '';
-      chatLog.scrollTop = chatLog.scrollHeight;
-      setTimeout(function () {
-        var botBubble = document.createElement('div');
-        botBubble.className = 'chat-bubble bot';
-        botBubble.textContent = chatReplies[Math.floor(Math.random() * chatReplies.length)];
-        chatLog.appendChild(botBubble);
-        chatLog.scrollTop = chatLog.scrollHeight;
-      }, 500);
-    });
+  // Janela de detalhes dos projetos
+  var opened = null, origin = null;
+  function openModal(id, from) {
+    var m = document.querySelector('[data-modal="' + id + '"]');
+    if (!m) return;
+    m.classList.add('open'); body.classList.add('no-scroll');
+    opened = m; origin = from;
+    var c = m.querySelector('[data-modal-close]'); if (c) c.focus();
   }
-});
-// MODAL DE PROJETO: clicar no card abre os detalhes; "Ver projeto" continua abrindo o link
-document.addEventListener('DOMContentLoaded', function () {
-  var aberto = null, origem = null;
-  function abrir(id, card) {
-    var modal = document.querySelector('[data-project-modal="' + id + '"]');
-    if (!modal) return;
-    modal.classList.add('open');
-    document.body.classList.add('modal-open');
-    aberto = modal; origem = card;
-    var btn = modal.querySelector('[data-project-close]');
-    if (btn) btn.focus();
-  }
-  function fechar() {
-    if (!aberto) return;
-    aberto.classList.remove('open');
-    document.body.classList.remove('modal-open');
-    aberto = null;
-    if (origem) origem.focus();
+  function closeModal() {
+    if (!opened) return;
+    opened.classList.remove('open'); body.classList.remove('no-scroll');
+    opened = null; if (origin) origin.focus();
   }
   document.querySelectorAll('[data-project]').forEach(function (card) {
     card.setAttribute('tabindex', '0');
     card.addEventListener('click', function (e) {
       if (e.target.closest('a')) return;
-      abrir(card.getAttribute('data-project'), card);
+      openModal(card.getAttribute('data-project'), card);
     });
     card.addEventListener('keydown', function (e) {
       if (e.target !== card) return;
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrir(card.getAttribute('data-project'), card); }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card.getAttribute('data-project'), card); }
     });
   });
-  document.querySelectorAll('[data-project-modal]').forEach(function (modal) {
-    modal.addEventListener('click', function (e) {
-      if (e.target === modal || e.target.closest('[data-project-close]')) fechar();
-    });
+  document.querySelectorAll('[data-modal]').forEach(function (m) {
+    m.addEventListener('click', function (e) { if (e.target === m || e.target.closest('[data-modal-close]')) closeModal(); });
   });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fechar(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeModal(); closeMenu(); } });
+
+  // Formulário de contato: monta a mensagem e abre o WhatsApp
+  var form = document.querySelector('[data-contact-form]');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      var d = new FormData(form);
+      var txt = 'Olá, Rodrigo! Vim pelo site.\n\n' +
+        '*Nome:* ' + d.get('nome') + '\n' +
+        '*E-mail:* ' + d.get('email') + '\n' +
+        (d.get('empresa') ? '*Empresa:* ' + d.get('empresa') + '\n' : '') +
+        '*Tipo de projeto:* ' + d.get('tipo') + '\n\n' +
+        d.get('mensagem');
+      window.open('https://wa.me/5527996386305?text=' + encodeURIComponent(txt), '_blank', 'noopener');
+    });
+  }
+
+  // Ano no rodapé
+  document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 });
